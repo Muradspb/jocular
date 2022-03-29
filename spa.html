@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ASSALOM OZBEKISTON</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<html>	
+	<script>
+	var pages = {
+		'home' : `AJAL-ZOOPARK Welcome to my Company. Hush Kelibsz bizning ZOOpark-ga <br> Bizning Sherhonlar Kulgili tuyulishi mumkin biz rostanham ularni: <br> Sherhonlar deb ataymiz:)  <br/><br/><img src='lion.jpg' style='width:500px;' />`,
+		'aboutus' : ` About Us my company. Biz haqimizda nimanlarni bilmoqchisiz<br/><br/><img src='lion2.jpg' style='width:500px;' />`,
+		'services' : `Services. Bizning hizmatlarimizga hush kelibsz  <br> Biz Sizlarga Sherlarni Korsatamiz Bilet narxi <br> Narxi: 150$ Adashmadiz aynan 150$ bu faqat bizda<br/><br/><img src='lion3.jpg' style='width:500px;' />`,
+		'contact' : `Contact. Albatta Bizning ZOO ga keling Biz judaham kop Jonivorlarni olib kelamiz vada beramiz <br> Kulgan Bolsanggiz sizdan 50$ kulmagan bolsang 1mlrd $ tola:) <br> Bolmasa Uyinggizga Shehon Bostirib boradi bu rost:) GOODBYE <br>  tel:+999000999 <br/><br/><img src='lion4.jpg' style='width:500px;' />`
+	};
+
+	function getPageContent(page){
+		var contentToReturn;
+		switch(page){
+			case 'home':
+				contentToReturn = pages.home;
+				break;
+			case 'aboutus':
+				contentToReturn = pages.aboutus;
+				break;
+			case 'services':
+				contentToReturn = pages.services;
+				break;
+			case 'contact':
+				contentToReturn = pages.contact;
+				break;
+			default:
+				contentToReturn = pages.home;
+				break;				
+		}
+		document.getElementById('content').innerHTML = contentToReturn; 
+	}
+	</script>
+<body onload="getPageContent('home')">
+
+	<div style="width:10%; float: left;background: #eee;height: 100%;">
+		<ul>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('home')">
+					Home
+				</a>
+			</li>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('aboutus')">
+					About Us
+				</a>
+			</li>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('services')">
+					Services
+				</a>
+			</li>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('contact')">
+					Contact
+				</a>
+			</li>
+		</ul>
+
+	</div>
+<div style="width: 90%;float: right; background: #999;color:#fff; height: 100%;font-size: 50px;"><p style="margin-left: 50px;" id="content"><p></div>
+</body>
+
+</html>
